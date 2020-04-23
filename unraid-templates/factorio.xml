@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="1">
+    <Date>2020-04-23</Date>
+    <Beta>False</Beta>
+    <Category>Games:</Category>
+    <Name>Factorio-Server</Name>
+    <Project>https://factorio.com/</Project>
+    <Changes>
+        [center][font size=4]Factorio Headless Server Docker Container Change Log[/font][/center]
+
+        [font size=3]2020.04.23[/font]
+        - Creating the Unraid GUI xml template
+        - Using default of factorio 0.18.19
+    </Changes>
+    <Overview>
+        A Dockerised version of the Factorio Headless Server.
+    </Overview>
+    <Description>
+        This was to play around with creating my entirely own process around docker on unraid and was inspired from the existing factoriotools/factorio content.
+    </Description>
+    <Registry>https://registry.hub.docker.com/u/agentclum/factorio/</Registry>
+    <GitHub>https://github.com/CalumD/containers</GitHub>
+    <Repository>agentclum/factorio</Repository>
+    <BindTime>true</BindTime>
+    <Privileged>false</Privileged>
+    <Environment/>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>34197</HostPort>
+                <ContainerPort>34197</ContainerPort>
+                <Protocol>udp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/factorio</HostDir>
+            <ContainerDir>/factorio_files</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+    <Icon>https://pbs.twimg.com/profile_images/461721746077261824/liyRhb8Q_400x400.png</Icon>
+
+    <Network Default="bridge">bridge</Network>
+
+    <Config Type="Port" Name="Multiplayer Server Port" Target="8888" Default="34197" Mode="udp" Display="always-hide" Required="true"
+            Description="This is the port that the game communicates on for multiplayer by default.">34197</Config>
+
+    <Config Type="Path" Name="Game Data Path" Target="/factorio_files" Default="/mnt/user/appdata/factorio" Mode="rw" Display="advanced-hide" Required="true"
+            Description="This is where the server will save the server configs and game files.">/mnt/user/appdata/factorio</Config>
+</Container>
