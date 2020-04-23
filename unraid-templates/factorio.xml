@@ -34,20 +34,6 @@
     <Environment/>
     <Data/>
     <Config
-            Name="Game Version" Description="Choose Game Version"
-            Target="GAME_VERSION"
-            Default="0.18.19"
-            Type="Variable"
-            Display="always" Required="true" Mask="false"
-    >0.18.19</Config>
-    <Config
-            Name="Game Port" Description="Choose Port, this should match the Docker port allocation."
-            Target="GAME_PORT"
-            Default="34197"
-            Type="Variable"
-            Display="always" Required="true" Mask="false"
-    >34197</Config>
-    <Config
             Name="Server Data" Description="Appdata for factorio server"
             Target="/factorio_files"
             Default="/mnt/user/appdata/factorio"
@@ -59,6 +45,6 @@
             Target="34197"
             Default="34197"
             Type="Port" Mode="udp"
-            Display="always" Required="true" Mask="false"
+            Display="advanced" Required="true" Mask="false"
     >34197</Config>
 </Container>
