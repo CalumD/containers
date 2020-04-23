@@ -1,0 +1,13 @@
+version: '1'
+services:
+  factorio:
+    build: .
+    ports:
+      - "34197:34197"/udp
+    volumes:
+      - .:/factorio_files
+    environment:
+      GAME_PORT: 34197
+      GAME_VERSION: '0.18.19'
+      GAME_SAVE_DIR: /factorio_files/saves
+      GAME_CONFIG_DIR: /factorio_files/config
