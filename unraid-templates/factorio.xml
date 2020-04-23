@@ -22,8 +22,10 @@
     <Registry>https://registry.hub.docker.com/u/agentclum/factorio/</Registry>
     <GitHub>https://github.com/CalumD/containers</GitHub>
     <Repository>agentclum/factorio</Repository>
+    <Icon>https://pbs.twimg.com/profile_images/461721746077261824/liyRhb8Q_400x400.png</Icon>
     <BindTime>true</BindTime>
     <Privileged>false</Privileged>
+    <Network>host</Network>
     <Shell>bash</Shell>
     <Environment>
         <Variable>
@@ -52,5 +54,7 @@
             <Mode>rw</Mode>
         </Volume>
     </Data>
-    <Icon>https://pbs.twimg.com/profile_images/461721746077261824/liyRhb8Q_400x400.png</Icon>
+    <Config Name="Game Version" Target="GAME_VERSION" Default="0.18.19" Description="Choose Game Version" Type="Variable" Display="always" Required="true" Mask="false">0.18.19</Config>
+    <Config Name="Game Port" Target="GAME_PORT" Default="34197" Description="Choose Port, this should match the Docker port allocation." Type="Variable" Display="always" Required="true" Mask="false">34197</Config>
+    <Config Name="Server Data" Target="/factorio_files" Default="/mnt/user/appdata/factorio" Mode="rw" Description="Appdata for factorio server" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/factorio</Config>
 </Container>
