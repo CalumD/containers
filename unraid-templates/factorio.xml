@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container version="1">
+    <TemplateURL>https://raw.githubusercontent.com/CalumD/containers/master/unraid-templates/factorio.xml</TemplateURL>
     <Date>2020-04-23</Date>
     <Beta>False</Beta>
     <Category>Games:</Category>
@@ -23,9 +24,19 @@
     <Repository>agentclum/factorio</Repository>
     <BindTime>true</BindTime>
     <Privileged>false</Privileged>
-    <Environment/>
+    <Shell>bash</Shell>
+    <Environment>
+        <Variable>
+            <Name>GAME_VERSION</Name>
+            <Value>0.18.19</Value>
+        </Variable>
+        <Variable>
+            <Name>GAME_PORT</Name>
+            <Value>34197</Value>
+        </Variable>
+    </Environment>
     <Networking>
-        <Mode>bridge</Mode>
+        <Mode>host</Mode>
         <Publish>
             <Port>
                 <HostPort>34197</HostPort>
@@ -42,12 +53,4 @@
         </Volume>
     </Data>
     <Icon>https://pbs.twimg.com/profile_images/461721746077261824/liyRhb8Q_400x400.png</Icon>
-
-    <Network Default="bridge">bridge</Network>
-
-    <Config Type="Port" Name="Multiplayer Server Port" Target="8888" Default="34197" Mode="udp" Display="always-hide" Required="true"
-            Description="This is the port that the game communicates on for multiplayer by default.">34197</Config>
-
-    <Config Type="Path" Name="Game Data Path" Target="/factorio_files" Default="/mnt/user/appdata/factorio" Mode="rw" Display="advanced-hide" Required="true"
-            Description="This is where the server will save the server configs and game files.">/mnt/user/appdata/factorio</Config>
 </Container>
