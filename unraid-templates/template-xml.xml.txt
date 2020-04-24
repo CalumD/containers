@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- REGEX FIND FOR THIS: (\{.*?\})-->
+
+<Container version="1">
+    <!--    STANDARD SETTINGS (ALWAYS THE SAME FOR ME)    -->
+    <Beta>False</Beta>
+    <Privileged>false</Privileged>
+    <Shell>bash</Shell>
+    <BindTime>true</BindTime>
+    <!--    WILL CHANGE THE NETWORK SETTINGS ON THE GUI   -->
+    <Network>bridge</Network>
+    <Networking><Mode>bridge</Mode><Publish/></Networking>
+
+
+    <!--    HEADINGS     -->
+    <Date>2020-{MM}-{DD}</Date>
+    <Name Default="{CONTAINER_NAME}">{CONTAINER_NAME}</Name>
+    <Category>{CATEGORY}</Category>
+
+    <!--    LINKS    -->
+    <GitHub>https://github.com/CalumD/containers</GitHub>
+    <TemplateURL>https://raw.githubusercontent.com/CalumD/containers/master/unraid-templates/{LINK_TO_THIS_XML}.xml</TemplateURL>
+    <Registry>https://hub.docker.com/r/agentclum/{LINK_TO_DOCKERHUB}</Registry>
+    <Repository>agentclum/{REPO_NAME:INSTANCE_TAG}</Repository>
+    <Icon>{HTTP_LINK_TO_ICON_IMAGE_WITH_TRANSPARENCY}</Icon>
+    <WebUI>http://[IP]:[PORT:{DEFAULT_PORT}]/index.html</WebUI>
+
+    <!--    ABOUT    -->
+    <Project>{OPTIONAL_HTTP_LINK_TO_PROJECT}</Project>
+    <Overview>{OPTIONAL_PROJECT-OVERVIEW}</Overview>
+    <Changes>{OPTIONAL_MARKDOWN?_CHANGLOG}</Changes>
+    <Description>{OPTIONAL_DETAILED_ABOUT_THIS_PROJECT}</Description>
+
+
+    <!--    CUSTOM SETTINGS (CAN IGNORE, THESE ARE NOW HANDLED IN <config> TAGS)   -->
+    <Environment/>
+    <Data/>
+
+    <!-- DOCKER PASSTHROUGH STUFF (DO NOT INCLUDE NEWLINES IN THE CONFIGS ELEMENTS) -->
+    <!--    ENVIRONMENT VARIABLES   -->
+    <config Type="Variable" Name="{VAR_NAME}" Target="{DOCKER_ENV_VAR_NAME}" Default="{DEFAULT_VALUE}" Description="{DOCKER_VAR_DESCRIPTION}" Mask="false" Display="always" Required="true">{SAME_AS_DEFAULT_VALUE}</config>
+
+    <!--    PORTS    -->
+    <config Type="Port" Name="{PORT_NAME}" Target="{DOCKER_CONTAINER_PORT}" Default="{DEFAULT_VALUE}" Mode="{tcp/udp}" Description="{CONTAINER_PORT_DESCRIPTION}" Display="always" Required="true">{SAME_AS_DEFAULT_VALUE}</config>
+
+    <!--    PATHS(Volumes/Files)    -->
+    <config Type="Path" Name="{PATH_NAME}" Target="{ABS_PATH_IN_CONTAINER}" Default="{ABS_PATH_ON_HOST}" Mode="rw" Description="{MOUNT_DESCRIPTION}" Display="always" Required="true">{SAME_AS_DEFAULT_VALUE}</config>
+
+
+</Container>
