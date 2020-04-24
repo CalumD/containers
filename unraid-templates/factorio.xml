@@ -22,7 +22,7 @@
     <Registry>https://hub.docker.com/r/agentclum/factorio</Registry>
     <GitHub>https://github.com/CalumD/containers</GitHub>
     <Repository>agentclum/factorio:latest</Repository>
-    <Icon>https://pbs.twimg.com/profile_images/461721746077261824/liyRhb8Q_400x400.png</Icon>
+    <Icon>https://styles.redditmedia.com/t5_2wabp/styles/communityIcon_lnp25hfmcbg01.png</Icon>
     <BindTime>true</BindTime>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
