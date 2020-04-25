@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="1">
+    <!--    STANDARD SETTINGS (ALWAYS THE SAME FOR ME)    -->
+    <Beta>False</Beta>
+    <Privileged>false</Privileged>
+    <Shell>bash</Shell>
+    <BindTime>true</BindTime>
+    <!--    WILL CHANGE THE NETWORK SETTINGS ON THE GUI   -->
+    <Network>bridge</Network>
+    <Networking><Mode>bridge</Mode><Publish/></Networking>
+
+
+    <!--    HEADINGS     -->
+    <Date>2020-04-24</Date>
+    <Name Default="Minecraft Server">Minecraft Server</Name>
+    <Category>GameServer:</Category>
+
+    <!--    LINKS    -->
+    <GitHub>https://github.com/CalumD/containers</GitHub>
+    <TemplateURL>https://raw.githubusercontent.com/CalumD/containers/master/unraid-templates/minecraft.xml</TemplateURL>
+    <Registry>https://hub.docker.com/r/agentclum/minecraft</Registry>
+    <Repository>agentclum/minecraft:latest}</Repository>
+    <Icon>https://theme.zdassets.com/theme_assets/2155033/bc270c23058d513de5124ffea6bf9199af7a2370.png</Icon>
+
+    <!--    ABOUT    -->
+    <Project>https://www.minecraft.net/en-us/</Project>
+    <Overview>Minecraft Server on JDK13</Overview>
+    <Changes>- Alpha Docker version</Changes>
+    <Description>Local version of a Minecraft server Jar running in docker :)</Description>
+
+
+    <!--    CUSTOM SETTINGS (CAN IGNORE, THESE ARE NOW HANDLED IN <config> TAGS)   -->
+    <Environment/>
+    <Data/>
+
+
+    <!-- DOCKER PASSTHROUGH STUFF (DO NOT INCLUDE NEWLINES IN THE CONFIGS ELEMENTS) -->
+    <!--    ENVIRONMENT VARIABLES   -->
+    <config Type="Variable" Name="Server RAM Allocation" Target="GAME_RAM" Default="6144" Description="How much RAM to allocate to minecraft IN MEGABYTES" Mask="false" Display="always" Required="false">6144</config>
+    <config Type="Variable" Name="Server Version" Target="SERVER_VERSION" Default="1.15.2" Description="What version of the Server.jar to aim for." Mask="false" Display="always" Required="false">1.15.2</config>
+
+    <!--    PORTS    -->
+    <config Type="Port" Name="Primary Game Port" Target="25565" Default="25565" Mode="tcp" Description="Port the game uses to communicate multiplayer." Display="advanced" Required="false">25565</config>
+
+    <!--    PATHS(Volumes/Files)    -->
+    <config Type="Path" Name="Game Data Directory" Target="/minecraft_data" Default="/mnt/user/appdata/minecraft" Mode="rw" Description="Where the server will host the game files." Display="always" Required="true">/mnt/user/appdata/minecraft</config>
+
+
+</Container>
