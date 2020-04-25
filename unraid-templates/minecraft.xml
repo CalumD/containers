@@ -19,7 +19,7 @@
     <GitHub>https://github.com/CalumD/containers</GitHub>
     <TemplateURL>https://raw.githubusercontent.com/CalumD/containers/master/unraid-templates/minecraft.xml</TemplateURL>
     <Registry>https://hub.docker.com/r/agentclum/minecraft</Registry>
-    <Repository>agentclum/minecraft:latest}</Repository>
+    <Repository>agentclum/minecraft:latest</Repository>
     <Icon>https://theme.zdassets.com/theme_assets/2155033/bc270c23058d513de5124ffea6bf9199af7a2370.png</Icon>
 
     <!--    ABOUT    -->
