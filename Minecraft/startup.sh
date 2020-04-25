@@ -32,6 +32,6 @@ else
     echo "eula=true" > eula.txt
 fi
 
-command="-Xms${GAME_RAM}M -Xmx${GAME_RAM}M -jar ${JAR_NAME} nogui"
+command="-Xms2048M -Xmx${GAME_RAM}M -jar ${JAR_NAME} nogui"
 echo "About to startup server with arguments: ${command}"
 java $command
