@@ -1,9 +1,7 @@
 FROM adoptopenjdk/openjdk13:jre-13.0.2_8
 
 # Update & Install software
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y wget lynx
+RUN apt-get update && apt-get upgrade -y && apt-get install -y wget lynx
 
 # Set Env variables
 ENV GAME_PORT=25565

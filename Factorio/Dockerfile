@@ -1,9 +1,7 @@
 FROM debian:buster
 
 # Update & Install software
-RUN apt-get update
-RUN apt-get upgrade
-RUN apt-get install -y wget xz-utils
+RUN apt-get update && apt-get upgrade -y && apt-get install -y wget xz-utils
 
 # Create directory for game files
 RUN mkdir -p /opt
