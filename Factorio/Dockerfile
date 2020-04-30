@@ -10,7 +10,7 @@ RUN mkdir -p /opt
 
 # Set Env variables
 ENV GAME_PORT=34197
-ENV GAME_VERSION='0.18.21'
+ENV GAME_VERSION='0.18.22'
 ENV GAME_SAVE_DIR=/factorio_files/saves
 ENV GAME_CONFIG_DIR=/factorio_files/config
 
