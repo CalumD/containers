@@ -11,6 +11,7 @@ ENV GAME_PORT=34197
 ENV GAME_VERSION='1.0.0'
 ENV GAME_SAVE_DIR=/factorio_files/saves
 ENV GAME_CONFIG_DIR=/factorio_files/config
+ENV GAME_MOD_DIR=/factorio_file/mods
 
 
 # Setup container variables
