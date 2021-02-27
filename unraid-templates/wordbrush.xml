@@ -23,7 +23,7 @@
     <TemplateURL>https://raw.githubusercontent.com/CalumD/containers/master/unraid-templates/wordbrush.xml</TemplateURL>
     <Registry>https://hub.docker.com/r/agentclum/wordbrush</Registry>
     <Repository>agentclum/wordbrush:latest</Repository>
-    <Icon>https://github.com/CalumD/WordBrush/blob/master/examples/WordBrush.svg</Icon>
+    <Icon>https://github.com/CalumD/WordBrush/blob/master/examples/favicon.png</Icon>
     <WebUI>http://[IP]:[PORT:8080]</WebUI>
 
     <!--    ABOUT    -->
