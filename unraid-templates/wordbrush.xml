@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="1">
+    <!--    STANDARD SETTINGS (ALWAYS THE SAME FOR ME)    -->
+    <Beta>False</Beta>
+    <Privileged>false</Privileged>
+    <Shell>bash</Shell>
+    <BindTime>true</BindTime>
+    <!--    WILL CHANGE THE NETWORK SETTINGS ON THE GUI   -->
+    <Network>bridge</Network>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish/>
+    </Networking>
+
+
+    <!--    HEADINGS     -->
+    <Date>2021-02-27</Date>
+    <Name>WordBrush</Name>
+    <Category>Other:Tools:</Category>
+
+    <!--    LINKS    -->
+    <GitHub>https://github.com/CalumD/containers</GitHub>
+    <TemplateURL>https://raw.githubusercontent.com/CalumD/containers/master/unraid-templates/wordbrush.xml</TemplateURL>
+    <Registry>https://hub.docker.com/r/agentclum/wordbrush</Registry>
+    <Repository>agentclum/wordbrush:latest</Repository>
+    <Icon>https://github.com/CalumD/WordBrush/blob/master/examples/WordBrush.svg</Icon>
+    <WebUI>http://[IP]:[PORT:8080]</WebUI>
+
+    <!--    ABOUT    -->
+    <Project>https://github.com/CalumD/WordBrush</Project>
+    <Overview>C, Node, Vue3 personal-project application.</Overview>
+    <Changes>
+        [center][font size=4]WordBrush Docker Container Change Log[/font][/center]
+
+        [font size=3]2021.02.27[/font]
+        - First publish of v 1.0.0
+    </Changes>
+    <Description>
+        This project takes ASCII input and draws the resultant line,
+        as if you were to 'swipe-to-type' that word across a touchscreen keyboard.
+    </Description>
+
+
+    <!--    CUSTOM SETTINGS (CAN IGNORE, THESE ARE NOW HANDLED IN <config> TAGS)   -->
+    <Environment/>
+    <Data/>
+
+    <!-- DOCKER PASSTHROUGH STUFF (DO NOT INCLUDE NEWLINES IN THE CONFIGS ELEMENTS) -->
+    <!--    ENVIRONMENT VARIABLES   -->
+    <Config Type="Variable" Name="Backend Address" Target="BACKEND_ADDRESS" Default="localhost" Description="The network accessible address for the container where the API is hosted." Mask="false" Display="always" Required="false">localhost</Config>
+
+    <!--    PORTS    -->
+    <Config Type="Port" Name="API Port" Target="3000" Default="3000" Mode="tcp" Description="Node API port for app data." Display="always" Required="true">3000</Config>
+    <Config Type="Port" Name="UI Port" Target="8080" Default="8080" Mode="tcp" Description="Vue3 UI port for the website view." Display="always" Required="true">8080</Config>
+
+    <!--    PATHS(Volumes/Files)    -->
+    <Config Type="Path" Name="Persistent Image Storage" Target="/wordbrush/resources" Default="/mnt/user/appdata/wordbrush" Mode="rw" Description="Folder used to persist WordBrush output across container restarts." Display="always" Required="false">/mnt/user/appdata/wordbrush</Config>
+
+
+</Container>
