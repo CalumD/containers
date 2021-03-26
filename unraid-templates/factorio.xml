@@ -9,6 +9,10 @@
     <Changes>
         [center][font size=4]Factorio Headless Server Docker Container Change Log[/font][/center]
 
+        [font size=3]2021-03-26[/font]
+        - Update to 1.1.30 as default version
+        - Update the Dockerfile in an attempt to avoid recursive sym link to the save folders
+
         [font size=3]2020.12.04[/font]
         - Update to 1.0.0 as default version
 
@@ -36,7 +40,14 @@
     </Networking>
     <Environment/>
     <Data/>
-    <Config Type="Variable" Name="Server Version" Target="GAME_VERSION" Default="1.0.0" Description="What version of the Server to aim for." Mask="false" Display="always" Required="false">1.0.0</Config>
-    <Config Name="Server Data" Description="Appdata for factorio server" Target="/factorio_files" Default="/mnt/user/appdata/factorio" Type="Path" Mode="rw" Display="always" Required="true" Mask="false">/mnt/user/appdata/factorio</Config>
-    <Config Type="Variable" Name="Server Listen Port" Target="GAME_PORT" Default="34197" Description="The port the server listens on." Mask="false" Display="always" Required="true">34197</Config>
+    <Config Type="Variable" Name="Server Version" Target="GAME_VERSION" Default="1.1.30"
+            Description="What version of the Server to aim for." Mask="false" Display="always" Required="false">1.1.30
+    </Config>
+    <Config Name="Server Data" Description="Appdata for factorio server" Target="/factorio"
+            Default="/mnt/user/appdata/factorio" Type="Path" Mode="rw" Display="always" Required="true" Mask="false">
+        /mnt/user/appdata/factorio
+    </Config>
+    <Config Type="Variable" Name="Server Listen Port" Target="GAME_PORT" Default="34197"
+            Description="The port the server listens on." Mask="false" Display="always" Required="true">34197
+    </Config>
 </Container>
