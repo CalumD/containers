@@ -40,14 +40,7 @@
     </Networking>
     <Environment/>
     <Data/>
-    <Config Type="Variable" Name="Server Version" Target="GAME_VERSION" Default="1.1.30"
-            Description="What version of the Server to aim for." Mask="false" Display="always" Required="false">1.1.30
-    </Config>
-    <Config Name="Server Data" Description="Appdata for factorio server" Target="/factorio"
-            Default="/mnt/user/appdata/factorio" Type="Path" Mode="rw" Display="always" Required="true" Mask="false">
-        /mnt/user/appdata/factorio
-    </Config>
-    <Config Type="Variable" Name="Server Listen Port" Target="GAME_PORT" Default="34197"
-            Description="The port the server listens on." Mask="false" Display="always" Required="true">34197
-    </Config>
+    <Config Type="Variable" Name="Server Version" Target="GAME_VERSION" Default="1.1.30" Description="What version of the Server to aim for." Mask="false" Display="always" Required="false">1.1.30</Config>
+    <Config Name="Server Data" Description="Appdata for factorio server" Target="/factorio" Default="/mnt/user/appdata/factorio" Type="Path" Mode="rw" Display="always" Required="true" Mask="false">/mnt/user/appdata/factorio</Config>
+    <Config Type="Variable" Name="Server Listen Port" Target="GAME_PORT" Default="34197" Description="The port the server listens on." Mask="false" Display="always" Required="true">34197</Config>
 </Container>
