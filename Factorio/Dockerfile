@@ -22,7 +22,7 @@ RUN chmod 777 /tmp/startup.sh
 
 USER facto
 
-RUN wget -qc https://factorio.com/get-download/$GAME_VERSION/headless/linux64 -O - | tar -xJ -C /tmp && \
+RUN mkdir -p /tmp/factorio && \
     ln -s "$GAME_SAVE_DIR" /tmp/factorio/saves && \
     ln -s "$GAME_MOD_DIR" /tmp/factorio/mods
 

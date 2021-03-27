@@ -4,6 +4,10 @@ mkdir -p $GAME_SAVE_DIR
 mkdir -p $GAME_CONFIG_DIR
 mkdir -p $GAME_MOD_DIR
 
+wget -qc https://factorio.com/get-download/$GAME_VERSION/headless/linux64 -O - | tar -xJ -C /tmp/factorio
+mv /tmp/factorio/factorio/* /tmp/factorio/.
+rmdir /tmp/factorio/factorio
+
 if [[ ! -f $GAME_CONFIG_DIR/server-settings.json ]]; then
   cp /tmp/factorio/data/server-settings.example.json "$GAME_CONFIG_DIR/server-settings.json"
 fi
@@ -32,10 +36,13 @@ fi
 
 TOTAL_SAVES=$(find -L "$GAME_SAVE_DIR" -mindepth 1 -iname \*.zip | wc -l)
 if [[ $TOTAL_SAVES == 0 ]]; then
+  echo "No World file exists, creating basic one..."
   /tmp/factorio/bin/x64/factorio \
     --create "$GAME_SAVE_DIR/_autosave1.zip" \
     --map-gen-settings "$GAME_CONFIG_DIR/map-gen-settings.json" \
     --map-settings "$GAME_CONFIG_DIR/map-settings.json"
+else
+  echo "World file already exists..."
 fi
 
 ## Run the Game
