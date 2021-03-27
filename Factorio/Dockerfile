@@ -21,5 +21,10 @@ COPY --chown=facto:facto startup.sh /tmp/startup.sh
 RUN chmod 777 /tmp/startup.sh
 
 USER facto
+
+RUN wget -qc https://factorio.com/get-download/$GAME_VERSION/headless/linux64 -O - | tar -xJ -C /tmp && \
+    ln -s "$GAME_SAVE_DIR" /tmp/factorio/saves && \
+    ln -s "$GAME_MOD_DIR" /tmp/factorio/mods
+
 VOLUME ["/factorio"]
 ENTRYPOINT ["/tmp/startup.sh"]

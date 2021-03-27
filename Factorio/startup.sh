@@ -4,12 +4,6 @@ mkdir -p $GAME_SAVE_DIR
 mkdir -p $GAME_CONFIG_DIR
 mkdir -p $GAME_MOD_DIR
 
-# Get the game
-wget -qc https://factorio.com/get-download/$GAME_VERSION/headless/linux64 -O - | tar -xJ -C /tmp
-ln -s "$GAME_SAVE_DIR" /tmp/factorio/saves
-ln -s "$GAME_MOD_DIR" /tmp/factorio/mods
-
-# Check files exist.
 if [[ ! -f $GAME_CONFIG_DIR/server-settings.json ]]; then
   cp /tmp/factorio/data/server-settings.example.json "$GAME_CONFIG_DIR/server-settings.json"
 fi
