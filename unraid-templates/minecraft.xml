@@ -14,7 +14,7 @@
 
 
     <!--    HEADINGS     -->
-    <Date>2020-04-24</Date>
+    <Date>2021-03-26</Date>
     <Name>Minecraft-Server</Name>
     <Category>GameServers:</Category>
 
@@ -31,6 +31,9 @@
     <Changes>
         [center][font size=4]Minecraft Server Docker Container Change Log[/font][/center]
 
+        [font size=3]2021-03-26[/font]
+        - Update base version to 1.16.5
+
         [font size=3]2020.04.25[/font]
         - Alpha First attempt
     </Changes>
@@ -45,7 +48,10 @@
     <!-- DOCKER PASSTHROUGH STUFF (DO NOT INCLUDE NEWLINES IN THE CONFIGS ELEMENTS) -->
     <!--    ENVIRONMENT VARIABLES   -->
     <Config Type="Variable" Name="Server RAM Allocation" Target="GAME_RAM" Default="6144" Description="How much RAM to allocate to minecraft IN MEGABYTES" Mask="false" Display="always" Required="false">6144</Config>
-    <Config Type="Variable" Name="Server Version" Target="SERVER_VERSION" Default="1.15.2" Description="What version of the Server.jar to aim for." Mask="false" Display="always" Required="false">1.15.2</Config>
+    <Config Type="Variable" Name="Server Version" Target="SERVER_VERSION" Default="1.16.5"
+            Description="What version of the Server.jar to aim for." Mask="false" Display="always" Required="false">
+        1.16.5
+    </Config>
 
     <!--    PORTS    -->
     <Config Type="Port" Name="Primary Game Port" Target="25565" Default="25565" Mode="tcp" Description="Port the game uses to communicate multiplayer." Display="advanced" Required="false">25565</Config>
