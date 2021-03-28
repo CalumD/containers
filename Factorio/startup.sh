@@ -5,8 +5,8 @@ mkdir -p $GAME_CONFIG_DIR
 mkdir -p $GAME_MOD_DIR
 
 wget -qc https://factorio.com/get-download/$GAME_VERSION/headless/linux64 -O - | tar -xJ -C /tmp/factorio
-mv /tmp/factorio/factorio/* /tmp/factorio/.
-rmdir /tmp/factorio/factorio
+cp -afr /tmp/factorio/factorio/* /tmp/factorio
+rm -rf /tmp/factorio/factorio
 
 if [[ ! -f $GAME_CONFIG_DIR/server-settings.json ]]; then
   cp /tmp/factorio/data/server-settings.example.json "$GAME_CONFIG_DIR/server-settings.json"
