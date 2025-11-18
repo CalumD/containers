@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-alpine
+FROM amazoncorretto:21-alpine
 
 ENV GAME_PORT=25565
 ENV SERVER_VERSION='1.18.1'
