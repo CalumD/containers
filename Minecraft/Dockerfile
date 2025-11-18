@@ -1,7 +1,7 @@
-FROM amazoncorretto:21-alpine
+FROM azul/zulu-openjdk-alpine:21-jre-headless-latest
 
 ENV GAME_PORT=25565
-ENV SERVER_VERSION='1.18.1'
+ENV SERVER_VERSION='1.21.10'
 ENV GAME_RAM=6144
 ENV GAME_DATA_DIR=/minecraft_data
 
